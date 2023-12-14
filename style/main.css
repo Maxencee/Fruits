@@ -25,100 +25,66 @@ html, body {
     padding: 0;
 }
 
-.fruitmachine {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-}
-
-.fruitmachine button {
-    /* margin: 0 auto; */
-    width: 100%;
-    text-align: center;
-    display: block;
-    font-size: 2rem;
-    background-color: #242424;
-    color: var(--light);
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transform: scaleX(1) translateY(0);
-}
-
-.fruitmachine button.active {
-    animation: focus .6s ease-out forwards;
-}
-
-.fruitlines-container {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    position: relative;
-    margin-bottom: 2rem;
-    gap: 1rem;
-}
-
-@keyframes focus {
-    0% {
-        transform: scaleX(1) translateY(0);
-    }
-
-    40% {
-        transform: scaleX(1.1) translateY(3%);
-    }
-
-    100% {
-        transform: scaleX(1) translateY(0);
-    }
-}
-
-.fruitline {
-    display: block;
-    height: 100px;
+body {
+    height: 100dvh;
+    width: 100vw;
     display: flex;
-    gap: 2rem;
-    padding: 1rem 2rem;
-    box-sizing: content-box;
-    /* border: 1px solid blue; */
-    opacity: 0;
-    transform: scale(.8) translateY(-2%);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
     position: relative;
-    animation: appear 170ms ease-out forwards;
-    animation-delay: var(--delay);
+    height: 100dvh;
+    width: 100%;
+    max-width: 530px;
+    background-color: red;
+    overflow-y: hidden;
+    transform: scaleY(-1);
+    padding: 1rem 2rem;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    transform: scaleY(-1);
+    transition: .32s height ease-out, .19s opacity linear;
+}
+
+.fruit {
+    width: 3rem;
+    height: 3rem;
+}
+
+.fruit img, .fruit div {
+    width: 100%;
+    height: 100%;
+}
+
+/* .fruit:hover {
+    outline: 3px solid white;
+    outline-offset: 6px;
     border-radius: 4px;
+} */
+
+.fruit.selected {
+    filter: drop-shadow(2px 2px var(--light)) drop-shadow(-2px -2px var(--light))
+        drop-shadow(2px -2px var(--light)) drop-shadow(-2px 2px var(--light));
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: scale(.8) translateY(-2%);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-.fruitline div {
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 8;
-}
-
-.fruitline div img {
-    width: 100%;
-    height: 100%;
-}
-
-/* STRAIGHT LINES */
-.fruitline:has(:nth-child(3 of .apple)),
-.fruitline:has(:nth-child(3 of .orange)),
-.fruitline:has(:nth-child(3 of .banana)),
-.fruitline:has(:nth-child(3 of .carot)),
-.fruitline:has(:nth-child(3 of .grape)),
-.fruitline:has(:nth-child(3 of .pear)),
-.fruitline:has(:nth-child(3 of .strawberry)),
-.fruitline:has(:nth-child(3 of .watermelon))
+.line-container:has(:nth-child(5 of .apple)),
+.line-container:has(:nth-child(5 of .orange)),
+.line-container:has(:nth-child(5 of .banana)),
+.line-container:has(:nth-child(5 of .carot)),
+.line-container:has(:nth-child(5 of .grape)),
+.line-container:has(:nth-child(5 of .pear)),
+.line-container:has(:nth-child(5 of .strawberry)),
+.line-container:has(:nth-child(5 of .watermelon))
 {
-    border: 3px solid #191919;
-    /* background-color: var(--dark); */
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
 }
