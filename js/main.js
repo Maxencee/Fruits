@@ -1,33 +1,18 @@
 'use strict';
 (function(){
     const Fruits = [
-        "apple",
-        "apple",
-        "apple",
-        "apple",
-        "apple",
-        "banana", 
-        "banana", 
-        "banana", 
-        "banana", 
-        "carot",  
-        "grape", 
-        "grape", 
-        "grape", 
-        "orange", 
-        "orange", 
-        "orange", 
-        "orange", 
-        "pear", 
-        "pear", 
-        "pear", 
-        "watermelon",
-        "watermelon",
+        "apple", "apple", "apple", "apple", "apple",
+        "banana", "banana", "banana", "banana", 
+        "orange", "orange", "orange", "orange", 
+        "grape", "grape", "grape",
+        "pear", "pear", "pear", 
+        "watermelon", "watermelon",
+        "carot"  
     ];
 
     function appendLines (max) {
         for (let i = 0; i < max; i++) {
-            $(".container").appendChild(Line.instance({
+            $(".game-container").appendChild(Line.instance({
                 fruits: [
                     Fruits[Random(0, Fruits.length)],
                     Fruits[Random(0, Fruits.length)],
@@ -41,7 +26,7 @@
 
     let score = 0;
 
-    $('.container').addEventListener('click', () => {
+    $('.game-container').addEventListener('click', () => {
         let select = 0;
         select += $$('.line-container:has(:nth-child(5 of .apple))').length;
         select += $$('.line-container:has(:nth-child(5 of .orange))').length * 2;
@@ -51,7 +36,7 @@
         select += $$('.line-container:has(:nth-child(5 of .watermelon))').length * 20;
         select += $$('.line-container:has(:nth-child(5 of .carot))').length * 50;
         
-        if(select.length !== score) {
+        if(select !== score) {
             $('.score').innerText = score = select;
             appendLines(1);
         }

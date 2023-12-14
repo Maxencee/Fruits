@@ -21,8 +21,13 @@ const FruitComponent = Component.new('fruit-component', {
         },
         onAttributeChange: function (name, value, old) {
         },
+        drag: function (evt) {
+            evt.preventDefault();
+        },
+        dragstart: function (evt) {
+            evt.preventDefault();
+        },
         click: function (evt) {
-            console.log("clicked");
             if(StoreCurrentSelected) {
                 if(StoreCurrentSelected == this) {
                     StoreCurrentSelected.classList.remove('selected');
