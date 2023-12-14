@@ -18,13 +18,18 @@ const FruitComponent = Component.new('fruit-component', {
         onDestroy: function () {
         },
         onMove: function () {
-            console.log("Moved !");
         },
         onAttributeChange: function (name, value, old) {
         },
         click: function (evt) {
             console.log("clicked");
             if(StoreCurrentSelected) {
+                if(StoreCurrentSelected == this) {
+                    StoreCurrentSelected.classList.remove('selected');
+                    StoreCurrentSelected = null;
+                    return;
+                }
+
                 let t = this.innerHTML;
                 let c = this.className;
 

@@ -19,7 +19,7 @@ const Line = Component.new('line-component', {
         },
         onMove: function () {
         },
-        onAttributeChange: function (name, value, old) {
+        onAttributeChange: function (name, value, old) {      
         }
     }
 });
