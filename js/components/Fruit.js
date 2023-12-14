@@ -13,6 +13,7 @@ const FruitComponent = Component.new('fruit-component', {
     events: {
         onCreate: function () {
             this.classList.add(this.fruit);
+            // this.style = `--delay: ${Random(300, 1890)}ms`; 
         },
         onDestroy: function () {
         },
