@@ -73,17 +73,6 @@
                 });
             }, 2000);
         }
-        // else {
-        //     let selected = $$('.line-container:has(:nth-child(5 of .apple)), .line-container:has(:nth-child(5 of .orange)), .line-container:has(:nth-child(5 of .banana)), .line-container:has(:nth-child(5 of .pear)), .line-container:has(:nth-child(5 of .grape)), .line-container:has(:nth-child(5 of .watermelon)), .line-container:has(:nth-child(5 of .carot))');
-        //     console.log(selected, selected.length % 10);
-        //     if(selected.length % 10 === 0) {
-        //         setTimeout(() => {
-        //             selected.forEach((e, k) => {
-        //                 e.remove();
-        //             });
-        //         }, 2000);
-        //     }
-        // }
     });
 
     appendLines(12);

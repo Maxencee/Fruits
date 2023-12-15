@@ -131,6 +131,16 @@ h1, h2, h3 {
     cursor: pointer;
 }
 
+.outlink-icon {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.outlink-icon:is(:hover, :focus) {
+    text-decoration: underline;
+}
+
 a.anchor {
     margin-right: .5rem;
     text-decoration: none;
