@@ -34,6 +34,11 @@ html, body {
     padding: 0;
 }
 
+::selection {
+    background-color: var(--purple-text);
+    color: var(--purple-dark);
+}
+
 .icon {
     display: block;
     width: 1.2em;
@@ -85,38 +90,29 @@ h1, h2, h3 {
 
 .no-support {
     display: none;
+    padding: .5rem 1rem;
+    border: 3px solid #590b0b;
+    background-color: #bf343438;
+    border-radius: 4px;
+    user-select: none;
 }
 
-@supports not selector(:has(*)) {
-    .no-support {
-      display: block;
-    }
-    .salle_de_classe_has:last-child {
-    border: 4px solid white;
-    }
-    .salle_de_classe-example:nth-child(2) {
-        border: 4px solid white;
-    }
-        .salle_de_classe-example:nth-child(4) {
-        border: 4px solid white;
-    }
+.no-support-game {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 90;
+    backdrop-filter: blur(14px);
 }
 
-@supports not selector(:nth-child(1 of *)) {
-    .no-support {
-      display: block;
-    }
-    .salle_de_classe :nth-child(5) {
-    border: 4px solid white;
-    }
-    .salle_de_classe-example:nth-child(2) {
-        border: 4px solid white;
-    }
-        .salle_de_classe-example:nth-child(4) {
-        border: 4px solid white;
-    }
+.no-support-game span {
+    width: 80%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scaleY(-1);
+    pointer-events: none;
 }
-  
+
 .pwa-install {
     z-index: 10;
     background-color: var(--purple-light);
@@ -172,6 +168,14 @@ li::before {
     transform: scale(.8) translate(-50%);
 }
 
+ul ul {
+    margin-block: .5rem;
+}
+
+ul ul li {
+    font-size: 1em;
+}
+
 ul ul li::before {
     content: '';
 }
@@ -202,9 +206,9 @@ ul ul li::before {
     color: #8b4131;
 }
 
-.salle_de_classe,
-.salle_de_classe_has,
-.salle_de_classe-example {
+.panier_de_fruits,
+.panier_de_fruits_has,
+.panier_de_fruits-example {
     color: var(--purple-text-shade);
     font-size: 2rem;
     display: flex;
@@ -212,31 +216,67 @@ ul ul li::before {
     gap: 1rem;
 }
 
-.salle_de_classe > .icon,
-.salle_de_classe_has > .icon,
-.salle_de_classe-example > .icon {
-    border-radius: 8rem;
+.panier_de_fruits > .icon,
+.panier_de_fruits_has > .icon,
+.panier_de_fruits-example > .icon {
+    border-radius: 2px;
     padding: 4px 4px;
 }
 
-.salle_de_classe-example:has(:nth-child(2 of .fille)) { border: 4px solid white; } 
-
-.salle_de_classe > .eleve:nth-child(3 of .fille) { 
-border: 4px solid white;
+.icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-.salle_de_classe_has {
+.panier_de_fruits > .fruit-demo:nth-child(2 of .banane) { 
+    background: white;
+}
+
+.panier_de_fruits-example:has(:nth-child(2 of .orange)) { border: 4px solid white; } 
+
+.panier_de_fruits_has {
     display: block;
 }
 
-.salle_de_classe_has > i {
+.panier_de_fruits_has > i {
     display: inline-block;
     vertical-align: middle;
     transform: translate(0, -0.20rem);
 }
 
-.salle_de_classe_has:has(.garcon) { 
-border: 4px solid white;
+.panier_de_fruits_has:has(.pasteque) { 
+    border: 4px solid white;
+}
+
+@supports not selector(:has(*)) {
+    .no-support {
+      display: block;
+    }
+    .panier_de_fruits_has:last-child {
+        border: 4px solid white;
+    }
+    .panier_de_fruits-example:nth-child(2) {
+        border: 4px solid white;
+    }
+    .panier_de_fruits-example:nth-child(4) {
+        border: 4px solid white;
+    }
+}
+
+@supports not selector(:nth-child(1 of *)) {
+    .no-support {
+      display: block;
+    }
+    .panier_de_fruits :nth-child(4) {
+        background: white;
+    }
+    .panier_de_fruits-example:nth-child(2) {
+        border: 4px solid white;
+    }
+    .panier_de_fruits-example:nth-child(4) {
+        border: 4px solid white;
+    }
 }
 
 /* 
@@ -264,6 +304,11 @@ border: 4px solid white;
     border: 4px solid var(--purple-light);
     border-radius: 8px;
     width: 100%;
+}
+
+.score {
+    display: inline-block;
+    position: relative;
 }
 
 .line-container {
@@ -326,7 +371,7 @@ border: 4px solid white;
     content: "x25";
 }
 
-.fruit.carot::after {
+.fruit.strawberry::after {
     content: "x100";
 }
 
@@ -372,7 +417,7 @@ border: 4px solid white;
 .line-container:has(:nth-child(5 of .apple)),
 .line-container:has(:nth-child(5 of .orange)),
 .line-container:has(:nth-child(5 of .banana)),
-.line-container:has(:nth-child(5 of .carot)),
+.line-container:has(:nth-child(5 of .strawberry)),
 .line-container:has(:nth-child(5 of .grape)),
 .line-container:has(:nth-child(5 of .pear)),
 .line-container:has(:nth-child(5 of .strawberry)),
@@ -386,7 +431,7 @@ border: 4px solid white;
 .line-container:has(:nth-child(5 of .apple)):after,
 .line-container:has(:nth-child(5 of .orange)):after,
 .line-container:has(:nth-child(5 of .banana)):after,
-.line-container:has(:nth-child(5 of .carot)):after,
+.line-container:has(:nth-child(5 of .strawberry)):after,
 .line-container:has(:nth-child(5 of .grape)):after,
 .line-container:has(:nth-child(5 of .pear)):after,
 .line-container:has(:nth-child(5 of .strawberry)):after,

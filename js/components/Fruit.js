@@ -46,7 +46,9 @@ const FruitComponent = Component.new('fruit-component', {
                 StoreCurrentSelected.className = c;
 
                 let kf = [
-                    { transform: "rotate(6deg) scale(1.6)" },
+                    { transform: `rotate(-6deg) scale(1.6)` },
+                    { transform: "rotate(0deg) scale(1)" },
+                    { transform: `rotate(6deg) scale(1)` },
                     { transform: "rotate(0deg) scale(1)" },
                 ];
 

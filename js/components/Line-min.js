@@ -1,0 +1,1 @@
+const Line=Component.new("line-component",{observe:[],render:function(){return""},attributes:{class:"line-container"},events:{onCreate:function(){this.fruits.forEach((n=>{let t=FruitComponent.instance({fruit:n});this.appendChild(t)}))},onDestroy:function(){},onMove:function(){},onAttributeChange:function(n,t,e){}}});
