@@ -51,7 +51,7 @@
                 </p>
                 <code class="demo">
                     <span class="css-class">.salle_de_classe</span> > <span class="css-class">.eleve</span>:nth-child(<span class="css-number">3</span> of <span class="css-class">.fille</span>) {
-                        <span class="css-tab"><span class="css-proprety">color</span>: <span class="css-value">white</span>;</span>
+                        <span class="css-tab"><span class="css-proprety">border</span>: <span class="css-number">4px</span> <span class="css-value">solid</span> <span class="css-value">white</span>;</span>
                     }
                 </code>
                 <div class="salle_de_classe demo">
@@ -77,7 +77,7 @@
                 <p>
                     Parmi les éléments <b>.eleve</b> qui sont des enfants directs de <b>.salle_de_classe</b>, 
                     on sélectionne parmis les <b>.fille</b>, celle qui est à la troisième position <b>(3 of .fille)</b>
-                    et on lui donne comme couleur blanc.
+                    et on la contourne en blanc.
                 </p>
             </div>
             <div>
@@ -89,7 +89,7 @@
                 </p>
                 <code class="demo">
                     <span class="css-class">.salle_de_classe</span>:has(<span class="css-class">.garcon</span>) {
-                        <span class="css-tab"><span class="css-proprety">color</span>: <span class="css-value">white</span>;</span>
+                        <span class="css-tab"><span class="css-proprety">border</span>: <span class="css-number">4px</span> <span class="css-value">solid</span> <span class="css-value">white</span>;</span>
                     }
                 </code>
                 <div class="demo salle_de_classe_has">
@@ -120,7 +120,7 @@
         <div class="container">
             <code class="demo">
                 <span class="css-class">.salle_de_classe</span>:has(:nth-child(<span class="css-number">2</span> of <span class="css-class">.fille</span>)) {
-                    <span class="css-tab"><span class="css-proprety">color</span>: <span class="css-value">white</span>;</span>
+                    <span class="css-tab"><span class="css-proprety">border</span>: <span class="css-number">4px</span> <span class="css-value">solid</span> <span class="css-value">white</span>;</span>
                 }
             </code>
             <div class="salle_de_classe-example demo">
@@ -179,6 +179,8 @@
     <div class="game-section section">
         <h2><a class="anchor" id="game" href="#game">#</a>Application</h2>
         <h3>Fruits Matches</h3>
+        <p>Faites des lignes horizontales de mêmes fruits</p>
+        <br>
         <div class="game-container">
             <div class="no-support no-support-game">
                 Votre navigateur ne supporte pas ces fonctionnalités.
@@ -189,7 +191,7 @@
             <h3>Keskisepasse?</h3>
             <p>Les lignes qui contiennes 5 fruit identiques sont selectionnés</p>
             <div class="demo fruits">
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.apple</span>))
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.pomme</span>))
                 {
                     <span class="css-tab"><span class="css-proprety">opacity</span>: <span class="css-number">0</span>;</span>
                 }

@@ -33,12 +33,23 @@
         select += $$('.line-container:has(:nth-child(5 of .banana))').length * 3;
         select += $$('.line-container:has(:nth-child(5 of .pear))').length * 8;
         select += $$('.line-container:has(:nth-child(5 of .grape))').length * 10;
-        select += $$('.line-container:has(:nth-child(5 of .watermelon))').length * 20;
-        select += $$('.line-container:has(:nth-child(5 of .carot))').length * 50;
+        select += $$('.line-container:has(:nth-child(5 of .watermelon))').length * 25;
+        select += $$('.line-container:has(:nth-child(5 of .carot))').length * 100;
         
         if(select !== score) {
             $('.score').innerText = score = select;
             appendLines(1);
+        }
+        else {
+            let selected = $$('.line-container:has(:nth-child(5 of .apple)), .line-container:has(:nth-child(5 of .orange)), .line-container:has(:nth-child(5 of .banana)), .line-container:has(:nth-child(5 of .pear)), .line-container:has(:nth-child(5 of .grape)), .line-container:has(:nth-child(5 of .watermelon)), .line-container:has(:nth-child(5 of .carot))');
+            console.log(selected, selected.length % 10);
+            if(selected.length % 10 === 0) {
+                setTimeout(() => {
+                    selected.forEach((e, k) => {
+                        e.remove();
+                    });
+                }, 2000);
+            }
         }
     });
 
