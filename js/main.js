@@ -75,5 +75,5 @@
         }
     });
 
-    appendLines(12);
+    appendLines(36);
 })();
