@@ -404,6 +404,10 @@ ul ul li::before {
     cursor: pointer;
 }
 
+.fruit img {
+    pointer-events: none;
+}
+
 /* .fruit:hover {
     outline: 3px solid white;
     outline-offset: 6px;
