@@ -5,6 +5,7 @@
     "background_color": "#0d0a14",
     "display": "standalone",
     "start_url": "/",
+    "offline": "true",
     "scope": "/",
     "icons": [
         {

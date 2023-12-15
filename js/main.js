@@ -76,4 +76,30 @@
     });
 
     appendLines(36);
+
+    document.addEventListener('drag', (evt) => {
+        if(evt.target.closest("img")) evt.preventDefault();
+    });
+
+    document.addEventListener('dragstart', (evt) => {
+        if(evt.target.closest("img")) evt.preventDefault();
+    });
+
+    let installPrompt;
+
+    const pwaInstallButton = $('.pwa-install');
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      installPrompt = event;
+      pwaInstallButton.removeAttribute("hidden");
+    });
+
+    pwaInstallButton.addEventListener("click", async () => {
+      if (!installPrompt) return alert("No install?");
+      const result = await installPrompt.prompt();
+      console.log("Install prompt result", result);
+      installPrompt = null;
+      pwaInstallButton.setAttribute("hidden", "");
+    });
 })();
