@@ -52,7 +52,7 @@
             $('.score').innerText = score = score + select;
             appendLines(1);
 
-            let m = (2.8 - 1.6) / (125 - 1);
+            let m = (2.6 - 1.6) / (125 - 1);
             let b = 1.6 - m * 1;
             let r = m * select + b
 
@@ -105,8 +105,12 @@
       pwaInstallButton.removeAttribute("hidden");
     });
 
+    $('.install-modal-close').addEventListener('click', () => {
+        $('.install-modal').classList.remove('active');
+    })
+
     pwaInstallButton.addEventListener("click", async () => {
-      if (!installPrompt) return alert("No install?");
+      if (!installPrompt) return $('.install-modal').classList.add('active');
       const result = await installPrompt.prompt();
       console.log("Install prompt result", result);
       installPrompt = null;
