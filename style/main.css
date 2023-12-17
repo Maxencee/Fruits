@@ -350,7 +350,7 @@ ul ul li::before {
     transition: transform .23s ease-in;
 }
 
-.fruit::after {
+.fruit div::after {
     content: "";
     position: absolute;
     display: block;
@@ -361,47 +361,57 @@ ul ul li::before {
     filter: drop-shadow(0 0 12px var(--purple-text-shade));
 }
 
-.fruit.apple::after {
+.fruit.apple div::after {
     content: "x1";
 }
 
-.fruit.orange::after {
+.fruit.orange div::after {
     content: "x2";
 }
 
-.fruit.banana::after {
+.fruit.banana div::after {
     content: "x3";
 }
 
-.fruit.pear::after {
+.fruit.pear div::after {
     content: "x8";
 }
 
-.fruit.grape::after {
+.fruit.grape div::after {
     content: "x10";
 }
 
-.fruit.watermelon::after {
+.fruit.watermelon div::after {
     content: "x25";
 }
 
-.fruit.strawberry::after {
+.fruit.strawberry div::after {
     content: "x100";
 }
 
 .fruit {
-    width: 3rem;
-    height: 3rem;
+    width: 100%;
+    height: 100%;
     user-select: none;
     position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
     filter: drop-shadow(0 0 2px var(--purple-text-shade));
     /* animation: float 4s var(--delay) ease-out forwards infinite; */
 }
 
-.fruit img, .fruit div {
+.fruit div {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.fruit img {
     width: 100%;
     height: 100%;
-    cursor: pointer;
 }
 
 .fruit img {
@@ -414,7 +424,7 @@ ul ul li::before {
     border-radius: 4px;
 } */
 
-.fruit.selected::after {
+.fruit.selected div::after {
     content: "";
 }
 
