@@ -1,11 +1,11 @@
 'use strict';
 (function(){
     const Fruits = [
-        "apple", "apple", "apple", "apple", "apple",
-        "banana", "banana", "banana", "banana", 
-        "orange", "orange", "orange", "orange", 
+        "apple", "apple", "apple", "apple", "apple", "apple", "apple", "apple",
+        "banana", "banana", "banana", "banana", "banana", "banana",
+        "orange", "orange", "orange", "orange", "orange",
+        "pear", "pear", "pear", "pear",
         "grape", "grape", "grape",
-        "pear", "pear", "pear", 
         "watermelon", "watermelon",
         "strawberry"  
     ];
@@ -26,7 +26,6 @@
                     Fruits[Random(0, Fruits.length)],
                     Fruits[Random(0, Fruits.length)],
                     Fruits[Random(0, Fruits.length)],
-                    Fruits[Random(0, Fruits.length)],
                     Fruits[Random(0, Fruits.length)]
                 ]
             }));
@@ -39,13 +38,13 @@
         if(evt.target.classList.contains("no-support")) return;
 
         let select = 0;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .apple))').length;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .orange))').length * 2;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .banana))').length * 3;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .pear))').length * 8;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .grape))').length * 10;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .watermelon))').length * 25;
-        select += $$('.line-container:not(.claimed):has(:nth-child(5 of .strawberry))').length * 100;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .apple))').length;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .orange))').length * 2;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .banana))').length * 3;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .pear))').length * 8;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .grape))').length * 10;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .watermelon))').length * 25;
+        select += $$('.line-container:not(.claimed):has(:nth-child(4 of .strawberry))').length * 100;
         
         console.log(select);
 
@@ -53,7 +52,9 @@
             $('.score').innerText = score = score + select;
             appendLines(1);
 
-            let r = 1.6 * (select - (select / 1.2));
+            let m = (2.8 - 1.6) / (125 - 1);
+            let b = 1.6 - m * 1;
+            let r = m * select + b
 
             let kf = [
                 { transform: `rotate(-6deg) scale(${r})` },
@@ -70,7 +71,7 @@
 
             $('.score').animate(kf, opts);
 
-            let selected = $$('.line-container:has(:nth-child(5 of .apple)), .line-container:has(:nth-child(5 of .orange)), .line-container:has(:nth-child(5 of .banana)), .line-container:has(:nth-child(5 of .pear)), .line-container:has(:nth-child(5 of .grape)), .line-container:has(:nth-child(5 of .watermelon)), .line-container:has(:nth-child(5 of .strawberry))');
+            let selected = $$('.line-container:has(:nth-child(4 of .apple)), .line-container:has(:nth-child(4 of .orange)), .line-container:has(:nth-child(4 of .banana)), .line-container:has(:nth-child(4 of .pear)), .line-container:has(:nth-child(4 of .grape)), .line-container:has(:nth-child(4 of .watermelon)), .line-container:has(:nth-child(4 of .strawberry))');
 
             selected.forEach((e, k) => {
                 e.classList.add('claimed');
@@ -84,7 +85,7 @@
         }
     });
 
-    appendLines(36);
+    appendLines(18);
 
     document.addEventListener('drag', (evt) => {
         if(evt.target.closest("img")) evt.preventDefault();
