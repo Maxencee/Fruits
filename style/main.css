@@ -432,28 +432,28 @@ ul ul li::before {
     100% { transform: rotate(0deg); }
 }
 
-.line-container:has(:nth-child(5 of .apple)),
-.line-container:has(:nth-child(5 of .orange)),
-.line-container:has(:nth-child(5 of .banana)),
-.line-container:has(:nth-child(5 of .strawberry)),
-.line-container:has(:nth-child(5 of .grape)),
-.line-container:has(:nth-child(5 of .pear)),
-.line-container:has(:nth-child(5 of .strawberry)),
-.line-container:has(:nth-child(5 of .watermelon))
+.line-container:has(:nth-child(4 of .apple)),
+.line-container:has(:nth-child(4 of .orange)),
+.line-container:has(:nth-child(4 of .banana)),
+.line-container:has(:nth-child(4 of .strawberry)),
+.line-container:has(:nth-child(4 of .grape)),
+.line-container:has(:nth-child(4 of .pear)),
+.line-container:has(:nth-child(4 of .strawberry)),
+.line-container:has(:nth-child(4 of .watermelon))
 {
     height: 0;
     opacity: 0;
     pointer-events: none;
 }
 
-.line-container:has(:nth-child(5 of .apple)):after,
-.line-container:has(:nth-child(5 of .orange)):after,
-.line-container:has(:nth-child(5 of .banana)):after,
-.line-container:has(:nth-child(5 of .strawberry)):after,
-.line-container:has(:nth-child(5 of .grape)):after,
-.line-container:has(:nth-child(5 of .pear)):after,
-.line-container:has(:nth-child(5 of .strawberry)):after,
-.line-container:has(:nth-child(5 of .watermelon)):after {
+.line-container:has(:nth-child(4 of .apple)):after,
+.line-container:has(:nth-child(4 of .orange)):after,
+.line-container:has(:nth-child(4 of .banana)):after,
+.line-container:has(:nth-child(4 of .strawberry)):after,
+.line-container:has(:nth-child(4 of .grape)):after,
+.line-container:has(:nth-child(4 of .pear)):after,
+.line-container:has(:nth-child(4 of .strawberry)):after,
+.line-container:has(:nth-child(4 of .watermelon)):after {
     transform: translate(-50%, -20%) scaleX(1);
     opacity: 1;
 }

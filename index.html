@@ -12,7 +12,7 @@
     <script src="./js/components/Fruit-min.js" defer></script>
     <script src="./js/components/Line-min.js" defer></script>
     <script src="./js/utility-min.js" defer></script>
-    <script src="./js/main-min.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <title>Fruits Matches</title>
 </head>
 <body>
@@ -188,7 +188,7 @@
     <div class="game-section section">
         <h2><a class="anchor" id="game" href="#game">#</a>Application</h2>
         <h3>Fruits Matches</h3>
-        <p>Faites des lignes horizontales de mêmes fruits pour gagner des points !</p>
+        <p>Faites des lignes horizontales de 4 mêmes fruits pour gagner des points !</p>
         <br>
         <div class="game-container">
             <div class="no-support no-support-game">
@@ -200,9 +200,9 @@
         <div class="score-container">SCORE : <span class="score">0</span></div>
         <div class="container">
             <h3><a class="anchor" id="how" href="#how">#</a>Comment ça marche ? <small>(en CSS)</small></h3>
-            <p>Les lignes qui contiennent 5 fruit identiques sont selectionnés</p>
+            <p>Les lignes qui contiennent 4 fruit identiques sont selectionnés</p>
             <div class="demo fruits">
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.pomme</span>))
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.pomme</span>))
                 {
                     <span class="css-tab"><span class="css-proprety">opacity</span>: <span class="css-number">0</span>;</span>
                 }
@@ -211,12 +211,12 @@
             <br>
             <p>Reste à faire ça pour tout les fruits</p>
             <div class="demo fruits">
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.pomme</span>)),<br>
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.banane</span>)),<br>
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.orange</span>)),<br>
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.poire</span>)),<br>
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.raisin</span>)),<br>
-                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">5</span> of <span class="css-class">.pasteque</span>))<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.pomme</span>)),<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.banane</span>)),<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.orange</span>)),<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.poire</span>)),<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.raisin</span>)),<br>
+                <span class="css-class">.ligne</span>:has(:nth-child(<span class="css-number">4</span> of <span class="css-class">.pasteque</span>))<br>
                 {
                     <span class="css-tab"><span class="css-proprety">opacity</span>: <span class="css-number">0</span>;</span>
                 }
