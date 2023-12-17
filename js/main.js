@@ -10,6 +10,15 @@
         "strawberry"  
     ];
 
+    async function requireServiceWorker () {
+        if ("serviceWorker" in navigator) {
+            const registration = await navigator.serviceWorker.register("./js/sw.js");
+            console.log(registration);
+        }
+    }
+
+    requireServiceWorker();
+
     function appendLines (max) {
         for (let i = 0; i < max; i++) {
             $(".game-container").appendChild(Line.instance({
